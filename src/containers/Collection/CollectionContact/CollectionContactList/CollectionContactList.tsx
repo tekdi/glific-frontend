@@ -118,6 +118,9 @@ export const CollectionContactList = ({
         selectedOptions={selectedContacts}
         searchLabel="Search contacts"
         textFieldPlaceholder="Type here"
+        fullWidth={true}
+        showTags={false}
+        placeholder="Select contacts"
         onChange={(value: any) => {
           if (typeof value === 'string') {
             setContactSearchTerm(value);

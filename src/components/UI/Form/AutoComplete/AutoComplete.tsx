@@ -47,6 +47,7 @@ export interface AutocompleteProps {
   hasCreateOption?: boolean;
   handleCreateItem?: any;
   isFilterType?: boolean;
+  showTags?: boolean;
 }
 
 export const AutoComplete = ({
@@ -82,6 +83,7 @@ export const AutoComplete = ({
   handleCreateItem = () => {},
   placeholder = '',
   isFilterType = false,
+  showTags = true,
 }: AutocompleteProps) => {
   const errorText = getIn(errors, field.name);
   const touchedVal = getIn(touched, field.name);
@@ -123,8 +125,10 @@ export const AutoComplete = ({
     }
     return option;
   };
+  console.log(showTags);
 
   const getRenderTags = (value: Array<any>, getTagProps: any) => {
+    if (!showTags) return null;
     let tagsToRender = value;
 
     /**
@@ -196,8 +200,6 @@ export const AutoComplete = ({
           onChange={(_event, value: any) => {
             if (asyncSearch && value.length > 0) {
               asyncValues.setValue([...value]);
-              setSearchTerm('');
-              onChange('');
             } else if (asyncSearch && value.length === 0) {
               asyncValues.setValue([]);
             }

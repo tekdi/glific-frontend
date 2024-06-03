@@ -226,6 +226,7 @@ export const CollectionList = () => {
         renderTags={false}
         searchLabel="Search contacts"
         textFieldPlaceholder="Type here"
+        showTags={false}
         onChange={(value: any) => {
           if (typeof value === 'string') {
             setContactSearchTerm(value);

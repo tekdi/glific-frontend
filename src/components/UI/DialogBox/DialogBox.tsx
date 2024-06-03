@@ -25,6 +25,7 @@ export interface DialogProps {
   buttonMiddle?: string | null;
   additionalTitleStyles?: string | null;
   buttonOkLoading?: boolean;
+  fullWidth: boolean;
 }
 
 export const DialogBox = ({
