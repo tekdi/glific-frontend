@@ -131,7 +131,7 @@ export const TranslateButton = ({
   };
 
   useEffect(() => {
-    if (saveClicked) {
+    if (saveClicked && showTranslateFlowModal) {
       if (translateOption === 'translate') {
         translateInteractiveMessage({ variables: { translateInteractiveTemplateId: templateId } });
       } else if (translateOption === 'export-translate') {
