@@ -33,7 +33,7 @@ const menus = (): Menu[] => [
     path: '/group/chat',
     icon: 'waGroup',
     type: 'sideDrawer',
-    roles: allRoles,
+    roles: managerLevel,
     show: !getOrganizationServices('whatsappGroupEnabled'),
     children: [
       {
@@ -41,14 +41,14 @@ const menus = (): Menu[] => [
         path: '/group/chat',
         icon: 'waGroupChat',
         type: 'sideDrawer',
-        roles: allRoles,
+        roles: managerLevel,
       },
       {
         title: 'Group Collections',
         path: '/group/collection',
         icon: 'waGroupCollection',
         type: 'sideDrawer',
-        roles: allRoles,
+        roles: managerLevel,
       },
     ],
   },
@@ -102,7 +102,7 @@ const menus = (): Menu[] => [
     path: '/ticket',
     icon: 'tickets',
     type: 'sideDrawer',
-    roles: ['Staff'],
+    roles: [''],
     show: !getOrganizationServices('ticketingEnabled'),
   },
   {
@@ -157,12 +157,19 @@ const menus = (): Menu[] => [
     ],
   },
   {
+    title: 'Triggers',
+    path: '/trigger',
+    icon: 'trigger',
+    type: 'sideDrawer',
+    roles: ['Staff'],
+  },
+  {
     title: 'Notifications',
     path: '/notifications',
     icon: 'notification',
     type: 'sideDrawer',
     showBadge: true,
-    roles: managerLevel,
+    roles: staffLevel,
   },
   {
     title: 'Manage',
@@ -190,7 +197,7 @@ const menus = (): Menu[] => [
         path: '/contact-management',
         type: 'sideDrawer',
         icon: 'contact',
-        roles: adminLevel,
+        roles: staffLevel,
       },
       {
         title: 'Blocked contacts',
@@ -259,7 +266,7 @@ const menus = (): Menu[] => [
     url: ANALYTICS_URL,
     icon: 'analytics',
     type: 'sideDrawer',
-    roles: staffLevel,
+    roles: managerLevel,
   },
   {
     title: 'Resources',
@@ -267,7 +274,7 @@ const menus = (): Menu[] => [
     url: GLIFIC_DOCS_URL,
     icon: 'help',
     type: 'sideDrawer',
-    roles: staffLevel,
+    roles: managerLevel,
   },
 
   {
@@ -276,7 +283,7 @@ const menus = (): Menu[] => [
     url: NEW_UI_BLOG,
     icon: 'new',
     type: 'sideDrawer',
-    roles: staffLevel,
+    roles: managerLevel,
   },
 ];
 
