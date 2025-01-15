@@ -1,5 +1,5 @@
 import { organizationHasDynamicRole } from 'common/utils';
-import { ANALYTICS_URL, GLIFIC_DOCS_URL, NEW_UI_BLOG } from 'config';
+import { ANALYTICS_URL, GLIFIC_DOCS_URL } from 'config';
 import { getOrganizationServices } from 'services/AuthService';
 
 const allRoles = ['Staff', 'Manager', 'Admin', 'Dynamic', 'Glific_admin'];
@@ -17,6 +17,7 @@ export interface Menu {
   url?: string;
   show?: boolean;
   children?: Menu[];
+  new?: boolean;
 }
 
 // define all the menus in the system
@@ -172,6 +173,14 @@ const menus = (): Menu[] => [
     roles: staffLevel,
   },
   {
+    title: 'Assistants',
+    path: '/assistants',
+    icon: 'assistant',
+    type: 'sideDrawer',
+    roles: allRoles,
+    new: true,
+  },
+  {
     title: 'Manage',
     path: '/collection',
     icon: 'manage',
@@ -276,7 +285,6 @@ const menus = (): Menu[] => [
     type: 'sideDrawer',
     roles: managerLevel,
   },
-
   {
     title: "What's new",
     path: '/changelog',
