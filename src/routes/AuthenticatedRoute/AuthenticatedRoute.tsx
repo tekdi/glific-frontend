@@ -63,11 +63,16 @@ const routeStaff = (
   <Routes>
     <Route path="collection" element={<CollectionList />} />
     <Route path="collection/:id/contacts" element={<CollectionContact />} />
-    <Route path="ticket" element={<TicketList />} />
     <Route path="contact-profile/:id/*" element={<ContactProfile />} />
     <Route path="blocked-contacts" element={<BlockContactList />} />
     <Route path="myaccount" element={<MyAccount />} />
     <Route path="/*" element={<Chat />} />
+
+    <Route path="trigger/add" element={<Trigger />} />
+    <Route path="trigger/:id/edit" element={<Trigger />} />
+    <Route path="trigger" element={<TriggerList />} />
+    <Route path="notifications" element={<NotificationList />} />
+    <Route path="contact-management" element={<ContactManagement />} />
   </Routes>
 );
 
