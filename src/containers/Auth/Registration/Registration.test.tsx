@@ -63,10 +63,9 @@ describe('<Registration />', () => {
     await user.click(email);
     await user.keyboard('you@domain.com');
     const checkbox = container.querySelector('input[name="consent_for_updates"]') as HTMLInputElement;
-    expect(checkbox).not.toBeChecked();
-
-    await user.click(checkbox);
     expect(checkbox).toBeChecked();
+    await user.click(checkbox);
+    expect(checkbox).not.toBeChecked();
 
     await waitFor(() => {
       // Regiter with button should be disabled by default
@@ -107,7 +106,6 @@ describe('<Registration />', () => {
     const email = container.querySelector('input[type="email"]') as HTMLInputElement;
     fireEvent.change(email, { target: { value: 'you@domain.com' } });
     const checkbox = container.querySelector('input[name="consent_for_updates"]') as HTMLInputElement;
-    fireEvent.click(checkbox);
     expect(checkbox).toBeChecked();
 
     await waitFor(() => {
